@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF1357E95D178542DB481A8F /* Pods_CM_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22971DE3B13D5957989EF67 /* Pods_CM_Networking.framework */; };
+		FE2BB4611F07AC2600B5874A /* TodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BB4601F07AC2600B5874A /* TodoRouter.swift */; };
 		FE4BE5121EFE525C008B0318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BE5111EFE525C008B0318 /* AppDelegate.swift */; };
 		FE4BE5141EFE525C008B0318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BE5131EFE525C008B0318 /* ViewController.swift */; };
 		FE4BE5171EFE525C008B0318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4BE5151EFE525C008B0318 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		1239DF9F3C893AA9703B51CE /* Pods-CM_Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CM_Networking.release.xcconfig"; path = "Pods/Target Support Files/Pods-CM_Networking/Pods-CM_Networking.release.xcconfig"; sourceTree = "<group>"; };
 		1DEAE459D83B0B48A111C545 /* Pods-CM_Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CM_Networking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CM_Networking/Pods-CM_Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		C22971DE3B13D5957989EF67 /* Pods_CM_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CM_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2BB4601F07AC2600B5874A /* TodoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRouter.swift; sourceTree = "<group>"; };
 		FE4BE50E1EFE525C008B0318 /* CM_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CM_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4BE5111EFE525C008B0318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4BE5131EFE525C008B0318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				FE4BE5111EFE525C008B0318 /* AppDelegate.swift */,
 				FE4BE5131EFE525C008B0318 /* ViewController.swift */,
+				FE2BB4601F07AC2600B5874A /* TodoRouter.swift */,
 				FE4BE5151EFE525C008B0318 /* Main.storyboard */,
 				FE4BE5181EFE525C008B0318 /* Assets.xcassets */,
 				FE4BE51A1EFE525C008B0318 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2BB4611F07AC2600B5874A /* TodoRouter.swift in Sources */,
 				FE4BE5141EFE525C008B0318 /* ViewController.swift in Sources */,
 				FE4BE5121EFE525C008B0318 /* AppDelegate.swift in Sources */,
 			);
@@ -378,6 +382,7 @@
 				FE4BE5221EFE525C008B0318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,12 +17,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         alamofireDeleteRequest()
+        print("\n\n")
+        alamofireGetRequestTest()
+        print("\n\n")
+        alamofirePostRequestTest()
     }
     
     
     func alamofireDeleteRequest() {
-        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
-        Alamofire.request(todoEndpoint, method: .delete)
+       Alamofire.request(TodoRouter.delete(1))
+        
+//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
+//        Alamofire.request(todoEndpoint, method: .delete)
             .responseJSON { response in
                 
                 if response.result.isSuccess == false {
@@ -36,10 +42,14 @@ class ViewController: UIViewController {
     
     func alamofirePostRequestTest()
     {
-        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos"
-        let newTodo: [String: Any] = ["title": "My FirstPost Using Alamofire", "completed" : 0, "userId" : 1]
+//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos"
         
-        Alamofire.request(todoEndpoint, method: .post, parameters: newTodo, encoding: JSONEncoding.default)
+        
+        let newTodo: [String: Any] = ["title": "My FirstPost Using Alamofire", "completed" : 0, "userId" : 1]
+        Alamofire.request(TodoRouter.create(newTodo))
+        
+        
+//        Alamofire.request(todoEndpoint, method: .post, parameters: newTodo, encoding: JSONEncoding.default)
             
             .responseJSON { response in
                 
@@ -64,9 +74,11 @@ class ViewController: UIViewController {
     }
     
     func alamofireGetRequestTest() {
-        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
+        Alamofire.request(TodoRouter.get(1))
         
-        Alamofire.request(todoEndpoint)
+//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
+//        
+//        Alamofire.request(todoEndpoint)
             .responseJSON { response in
                 
                 if response.result.isSuccess == false {
