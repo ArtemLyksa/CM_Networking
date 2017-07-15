@@ -16,41 +16,74 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        alamofireDeleteRequest()
-        print("\n\n")
-        alamofireGetRequestTest()
-        print("\n\n")
-        alamofirePostRequestTest()
+//        alamofireDeleteRequest()
+//        print("\n\n")
+//        alamofireGetRequestTest()
+//        print("\n\n")
+//        alamofirePostRequestTest()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Todo.todoByID(id: 1) { result in
+            if let error = result.error {
+                print("error calling POST on /todos/")
+                print(error)
+                return
+            }
+            guard let todo = result.value else {
+                print("erro calling POST on /todos/ - result is nil")
+                return
+            }
+            //success!
+            print(todo.description())
+            print(todo.title)
+        }
+        
+        //MARK: Create new todo
+        guard
+            let newTodo = Todo(
+                title: "My first todo",
+                id: nil,
+                userId: 1,
+                isCompleted: true)
+            else {
+                print("error: newTodo isn't a Todo")
+                return
+        }
+                
+        newTodo.save { result in
+            if let error = result.error {
+                print("error calling POST on /todos/")
+                print(error)
+                return
+            }
+            guard let todo = result.value else {
+                print("erro calling POST on /todos/ - result is nil")
+                return
+            }
+            //success!
+            print(todo.description())
+            print(todo.title)
+        }        
+    }
     
     func alamofireDeleteRequest() {
        Alamofire.request(TodoRouter.delete(1))
-        
-//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
-//        Alamofire.request(todoEndpoint, method: .delete)
             .responseJSON { response in
-                
                 if response.result.isSuccess == false {
                     print("CALL FAILED")
                     return
                 }
-                
                 print("DELETE ok")
         }
     }
     
     func alamofirePostRequestTest()
     {
-//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos"
-        
-        
         let newTodo: [String: Any] = ["title": "My FirstPost Using Alamofire", "completed" : 0, "userId" : 1]
         Alamofire.request(TodoRouter.create(newTodo))
-        
-        
-//        Alamofire.request(todoEndpoint, method: .post, parameters: newTodo, encoding: JSONEncoding.default)
-            
             .responseJSON { response in
                 
                 if response.result.isSuccess == false {
@@ -75,10 +108,6 @@ class ViewController: UIViewController {
     
     func alamofireGetRequestTest() {
         Alamofire.request(TodoRouter.get(1))
-        
-//        let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
-//        
-//        Alamofire.request(todoEndpoint)
             .responseJSON { response in
                 
                 if response.result.isSuccess == false {
@@ -110,7 +139,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //NATIVE URL REQUESTS
     func nativeGetReqestTest() {
         let todoEndpoint = "https://jsonplaceholder.typicode.com/todos/1"
     
