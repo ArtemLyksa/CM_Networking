@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BF1357E95D178542DB481A8F /* Pods_CM_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22971DE3B13D5957989EF67 /* Pods_CM_Networking.framework */; };
+		FE0D3AB11F516491000D557C /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D3AB01F516491000D557C /* GitHubAPIManager.swift */; };
+		FE0D3AB31F516640000D557C /* GistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D3AB21F516640000D557C /* GistRouter.swift */; };
+		FE0D3AB61F517009000D557C /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D3AB51F517009000D557C /* Gist.swift */; };
+		FE0D3ADA1F51750F000D557C /* GistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D3AD91F51750F000D557C /* GistTableViewController.swift */; };
+		FE0D3ADC1F5177C9000D557C /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0D3ADB1F5177C9000D557C /* GistDetailViewController.swift */; };
 		FE2BB4611F07AC2600B5874A /* TodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BB4601F07AC2600B5874A /* TodoRouter.swift */; };
 		FE4BE5121EFE525C008B0318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BE5111EFE525C008B0318 /* AppDelegate.swift */; };
 		FE4BE5141EFE525C008B0318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BE5131EFE525C008B0318 /* ViewController.swift */; };
@@ -22,6 +27,11 @@
 		1239DF9F3C893AA9703B51CE /* Pods-CM_Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CM_Networking.release.xcconfig"; path = "Pods/Target Support Files/Pods-CM_Networking/Pods-CM_Networking.release.xcconfig"; sourceTree = "<group>"; };
 		1DEAE459D83B0B48A111C545 /* Pods-CM_Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CM_Networking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CM_Networking/Pods-CM_Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		C22971DE3B13D5957989EF67 /* Pods_CM_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CM_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0D3AB01F516491000D557C /* GitHubAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
+		FE0D3AB21F516640000D557C /* GistRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistRouter.swift; sourceTree = "<group>"; };
+		FE0D3AB51F517009000D557C /* Gist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
+		FE0D3AD91F51750F000D557C /* GistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistTableViewController.swift; sourceTree = "<group>"; };
+		FE0D3ADB1F5177C9000D557C /* GistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
 		FE2BB4601F07AC2600B5874A /* TodoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRouter.swift; sourceTree = "<group>"; };
 		FE4BE50E1EFE525C008B0318 /* CM_Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CM_Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4BE5111EFE525C008B0318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +73,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE0D3AAE1F51631A000D557C /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				FE2BB4601F07AC2600B5874A /* TodoRouter.swift */,
+				FE5A1AE61F19FCF1001A5CB2 /* Todo.swift */,
+				FE5A1AE81F1A012B001A5CB2 /* Todo+Networking.swift */,
+			);
+			name = ToDo;
+			sourceTree = "<group>";
+		};
+		FE0D3AAF1F516326000D557C /* Gist */ = {
+			isa = PBXGroup;
+			children = (
+				FE0D3AB01F516491000D557C /* GitHubAPIManager.swift */,
+				FE0D3AB21F516640000D557C /* GistRouter.swift */,
+				FE0D3AB41F516FF7000D557C /* Models */,
+			);
+			name = Gist;
+			sourceTree = "<group>";
+		};
+		FE0D3AB41F516FF7000D557C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE0D3AB51F517009000D557C /* Gist.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FE4BE5051EFE525C008B0318 = {
 			isa = PBXGroup;
 			children = (
@@ -84,11 +122,12 @@
 		FE4BE5101EFE525C008B0318 /* CM_Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FE0D3AAF1F516326000D557C /* Gist */,
+				FE0D3AAE1F51631A000D557C /* ToDo */,
 				FE4BE5111EFE525C008B0318 /* AppDelegate.swift */,
 				FE4BE5131EFE525C008B0318 /* ViewController.swift */,
-				FE2BB4601F07AC2600B5874A /* TodoRouter.swift */,
-				FE5A1AE61F19FCF1001A5CB2 /* Todo.swift */,
-				FE5A1AE81F1A012B001A5CB2 /* Todo+Networking.swift */,
+				FE0D3AD91F51750F000D557C /* GistTableViewController.swift */,
+				FE0D3ADB1F5177C9000D557C /* GistDetailViewController.swift */,
 				FE4BE5151EFE525C008B0318 /* Main.storyboard */,
 				FE4BE5181EFE525C008B0318 /* Assets.xcassets */,
 				FE4BE51A1EFE525C008B0318 /* LaunchScreen.storyboard */,
@@ -220,11 +259,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0D3AB31F516640000D557C /* GistRouter.swift in Sources */,
 				FE2BB4611F07AC2600B5874A /* TodoRouter.swift in Sources */,
 				FE4BE5141EFE525C008B0318 /* ViewController.swift in Sources */,
+				FE0D3ADA1F51750F000D557C /* GistTableViewController.swift in Sources */,
+				FE0D3ADC1F5177C9000D557C /* GistDetailViewController.swift in Sources */,
 				FE4BE5121EFE525C008B0318 /* AppDelegate.swift in Sources */,
+				FE0D3AB61F517009000D557C /* Gist.swift in Sources */,
 				FE5A1AE91F1A012B001A5CB2 /* Todo+Networking.swift in Sources */,
 				FE5A1AE71F19FCF1001A5CB2 /* Todo.swift in Sources */,
+				FE0D3AB11F516491000D557C /* GitHubAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
